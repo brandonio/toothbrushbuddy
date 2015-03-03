@@ -106,11 +106,11 @@ timer_callback(void *data)
 		layer_mark_dirty(text_layer_get_layer(nextstep_layer));
 		layer_mark_dirty(text_layer_get_layer(countdown_layer));
 		vibes_enqueue_custom_pattern(threeshort_pattern);
-    tooth_timer = app_timer_register(5*60*1000 /* 5 minutes */, exit_callback, NULL);
+    tooth_timer = app_timer_register(1*60*1000 /* 1 minute */, exit_callback, NULL);
 		return;
 	}
 
-	tooth_timer = app_timer_register(1000 /* milliseconds */, timer_callback, NULL);
+	tooth_timer = app_timer_register(1000 /* 1 second */, timer_callback, NULL);
 	APP_LOG(APP_LOG_LEVEL_DEBUG, "timer_callback nextstep:%d, nextstep_countdown:%d", nextstep, nextstep_countdown);
 	if (nextstep_countdown <= 0)
 	{
@@ -173,7 +173,7 @@ window_load(Window *window)
 	// text_layer_set_text_alignment(step_layer, GTextAlignmentCenter);
 	layer_add_child(window_layer, text_layer_get_layer(step_layer));
 	
-	strcpy(s_countdown_layer, "Start");
+	strcpy(s_countdown_layer, "START");
 	countdown_layer = text_layer_create((GRect) { .origin = { 0, 48 }, .size = { bounds.size.w, 42 } });
 	text_layer_set_text(countdown_layer, s_countdown_layer);
 	text_layer_set_font(countdown_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
