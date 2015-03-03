@@ -1,0 +1,20 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "brandonberookhim@gmail.com",
+    "longName": "Toothbrush Buddy",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "2",
+    "shortName": "Toothbrush Buddy",
+    "uuid": "75564043-e460-4d8d-bc8f-eca3b2a345b9",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
